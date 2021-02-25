@@ -1,9 +1,16 @@
+import os
+import sys
 import pandas as pd
 import pytest
-from request_predictor import requestPredictor
 import urllib
 import requests
 import json
+
+sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)),'../'))
+
+from request_predictor import requestPredictor
+
+
 
 test_1 = {"products": [{"title": "Lembrancinha 15 anos - Lembrancinha de 15 anos", "query": "lembrancinhas de 15 anos", "concatenated_tags": "15 anos"}, {"title": "Trio de Nichos Prateleira", "query": "prateleira", "concatenated_tags": "prateleiras decoracao gaveteiros nichos prateleiras nichos"}]}
 
@@ -21,7 +28,7 @@ def test_post_expected_201():
     url = "http://0.0.0.0:5000/v1/categorize"
     req = urllib.request.Request(url)
     req.add_header('Content-Type', 'application/json') 
-    json_file = open('test1.json',)
+    json_file = open('test/data/test1.json',)
     json_data = json.load(json_file) 
     json_file.close()
     resp = requests.post(url, json=json_data, headers=req.headers)
