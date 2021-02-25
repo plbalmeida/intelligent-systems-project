@@ -38,4 +38,4 @@ def post():
 
     req_predictor = requestPredictor(df)
 
-    return req_predictor.predict
+    return req_predictor.predict, 201
