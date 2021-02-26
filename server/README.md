@@ -30,8 +30,8 @@ Your API should be composed of the following components:
    responses according to different inputs.
    
    * **How to run api tests:** <br>
-	* docker-compose up -d --build
-        * docker exec -it <CONTAINER ID> pytest -v test/test_api.py 
+    * docker-compose up -d --build
+    * docker exec -it <CONTAINER ID> pytest -v test/test_api.py 
 
 **NOTE:** To test your API, you must provide a JSON file generated from the
 dataset `test_producs.csv`, containing a valid input for your API
