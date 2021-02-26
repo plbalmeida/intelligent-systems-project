@@ -4,9 +4,7 @@ import pytest
 import urllib
 import requests
 import json
-
 sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)),'../'))
-
 from request_predictor import requestPredictor
 
 
