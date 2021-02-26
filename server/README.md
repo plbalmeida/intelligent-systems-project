@@ -29,9 +29,9 @@ Your API should be composed of the following components:
    Runs automated tests from a file `test_api.py` to validate the API
    responses according to different inputs.
    
-   - **How to run api tests:** <br>
-	- docker-compose up -d --build
-        - docker exec -it <CONTAINER ID> pytest -v test/test_api.py 
+   * **How to run api tests:** <br>
+	* docker-compose up -d --build
+        * docker exec -it <CONTAINER ID> pytest -v test/test_api.py 
 
 **NOTE:** To test your API, you must provide a JSON file generated from the
 dataset `test_producs.csv`, containing a valid input for your API
