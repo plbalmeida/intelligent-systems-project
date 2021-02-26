@@ -1,0 +1,33 @@
+model BoW TEST metrics:
+
+                    precision    recall  f1-score   support
+
+              Bebê       0.89      0.85      0.87      1372
+Bijuterias e Jóias       0.95      0.91      0.93       169
+         Decoração       0.91      0.90      0.90      1794
+     Lembrancinhas       0.90      0.92      0.91      3482
+            Outros       0.85      0.67      0.75       222
+       Papel e Cia       0.83      0.66      0.74       561
+
+         micro avg       0.90      0.88      0.89      7600
+         macro avg       0.89      0.82      0.85      7600
+      weighted avg       0.89      0.88      0.88      7600
+       samples avg       0.86      0.88      0.87      7600
+
+
+model BoW VALIDATION metrics:
+
+                    precision    recall  f1-score   support
+
+              Bebê       0.96      0.91      0.94      1412
+Bijuterias e Jóias       1.00      0.99      0.99       175
+         Decoração       0.97      0.96      0.96      1756
+     Lembrancinhas       0.94      0.97      0.95      3489
+            Outros       0.98      0.89      0.93       209
+       Papel e Cia       0.93      0.85      0.89       559
+
+         micro avg       0.95      0.94      0.95      7600
+         macro avg       0.96      0.93      0.94      7600
+      weighted avg       0.95      0.94      0.95      7600
+       samples avg       0.94      0.94      0.94      7600
+
