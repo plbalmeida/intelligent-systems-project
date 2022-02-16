@@ -10,9 +10,10 @@ def predict():
     '''API for product category prediction.'''
 
     json_input = request.json['query']
-    query = pd.DataFrame(json_input)
-    data_engineering = pickle.load(os.getenv('DATA_ENGINEERING_PATH'))
-    model = pickle.load(os.getenv('MODEL_PATH'))
+    query = pd.DataFrame([json_input])
+    query.columns = ['query']
+    data_engineering = pickle.load(open(os.getenv('DATA_ENGINEERING_PATH'), 'rb'))
+    model = pickle.load(open(os.getenv('MODEL_PATH'), 'rb'))
     query_transformed = data_engineering.transform(query)
     prediction = model.predict(query_transformed)
     return jsonify({'categories': prediction})
