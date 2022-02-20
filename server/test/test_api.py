@@ -7,11 +7,11 @@ import urllib
 
 sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)),'../'))
 
-def test_200():
+def response_200():
     '''test if the expected request code 201 is returned.''' 
 
-    url = "http://0.0.0.0:5000/v1/categorize"	
-    path = 'test/input.json'
+    url = 'http://0.0.0.0:5000/v1/categorize'	
+    path = 'test/test_products.json'
     req = urllib.request.Request(url)
     req.add_header('Content-Type', 'application/json') 
     json_file = open(path)
