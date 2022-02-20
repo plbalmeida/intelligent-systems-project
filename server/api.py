@@ -16,5 +16,8 @@ def predict():
     model = pickle.load(open(os.getenv('MODEL_PATH'), 'rb'))
     query_transformed = data_engineering.transform(query['query'])
     prediction = model.predict(query_transformed)
-    return json.dumps({"categories": list(prediction)}), 400
-  
+    
+    try:
+        return json.dumps({"categories": list(prediction)}), 200
+    except Exception as e:
+        return {'Error': str(e)}, 400
