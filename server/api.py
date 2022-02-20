@@ -16,5 +16,5 @@ def predict():
     model = pickle.load(open(os.getenv('MODEL_PATH'), 'rb'))
     query_transformed = data_engineering.transform(query)
     prediction = model.predict(query_transformed)
-    return jsonify({'categories': prediction})
+    return jsonify({'categories': prediction[0]})
     
