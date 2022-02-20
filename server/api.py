@@ -1,3 +1,4 @@
+import json
 import os
 import pickle
 import pandas as pd
@@ -9,12 +10,11 @@ app = Flask(__name__)
 def predict():
     '''API for product category prediction.'''
 
-    json_input = request.json['query']
-    query = pd.DataFrame([json_input])
-    query.columns = ['query']
+    json_input = request.json['products']
+    query = pd.DataFrame(json_input)
     data_engineering = pickle.load(open(os.getenv('DATA_ENGINEERING_PATH'), 'rb'))
     model = pickle.load(open(os.getenv('MODEL_PATH'), 'rb'))
     query_transformed = data_engineering.transform(query)
     prediction = model.predict(query_transformed)
-    return jsonify({'categories': prediction[0]})
+    return json.dumps({"categories": [prediction[0]]}), 400
     
