@@ -1,6 +1,5 @@
 import json
 import os
-import pytest
 import requests
 import sys
 import urllib
@@ -20,4 +19,3 @@ def response_200():
     resp = requests.post(url, json=json_data, headers=req.headers)
 
     assert resp.status_code == 200
-    
